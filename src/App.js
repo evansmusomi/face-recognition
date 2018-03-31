@@ -10,6 +10,25 @@ import Register from "./components/Register/Register";
 import Signin from "./components/Signin/Signin";
 import "./App.css";
 
+const clarifaiApp = new Clarifai.App({
+  apiKey: process.env.REACT_APP_CLARIFAI_API_KEY
+});
+
+const initialState = {
+  input: "",
+  imageUrl: "",
+  box: {},
+  route: "signin",
+  isSignedIn: false,
+  user: {
+    entries: "",
+    email: "",
+    id: "",
+    joined: "",
+    name: ""
+  }
+};
+
 const particleOptions = {
   particles: {
     number: {
@@ -22,27 +41,10 @@ const particleOptions = {
   }
 };
 
-const clarifaiApp = new Clarifai.App({
-  apiKey: process.env.REACT_APP_CLARIFAI_API_KEY
-});
-
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      input: "",
-      imageUrl: "",
-      box: {},
-      route: "signin",
-      isSignedIn: false,
-      user: {
-        entries: "",
-        email: "",
-        id: "",
-        joined: "",
-        name: ""
-      }
-    };
+    this.state = initialState;
   }
 
   calculateFaceLocation = data => {
@@ -73,7 +75,6 @@ class App extends Component {
         name: data.name
       }
     });
-    console.log(this.state.user);
   };
 
   onInputChange = event => {
@@ -107,7 +108,7 @@ class App extends Component {
 
   onRouteChange = route => {
     if (route === "signout") {
-      this.setState({ isSignedIn: false });
+      this.setState(initialState);
     } else if (route === "home") {
       this.setState({ isSignedIn: true });
     }
