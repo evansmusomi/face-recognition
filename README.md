@@ -28,6 +28,4 @@ Each feature manipulates or displays information related to Face Recognition Att
 
 ## Demo
 
-<iframe width="630" height="394" src="https://www.useloom.com/embed/bef3838cb3f44efdbfaa9b8d72225b2e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-[View Demo](https://www.useloom.com/share/bef3838cb3f44efdbfaa9b8d72225b2e)
+[![Watch the Demo Video](https://raw.githubusercontent.com/evansmusomi/face-recognition/master/public/demo-video-preview.png)](https://www.useloom.com/share/bef3838cb3f44efdbfaa9b8d72225b2e)
